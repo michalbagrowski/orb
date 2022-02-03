@@ -1,7 +1,7 @@
 description: >
-  This is a sample executor using Docker and Node.
+  aeternity
 docker:
-  - image: 'aeternity/image:<<parameters.tag>>'
+  - image: 'aeternity/infrastructure:<<parameters.tag>>'
 parameters:
   tag:
     default: v2.12.4
