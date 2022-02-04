@@ -2,6 +2,7 @@ description: >
   aeternity
 docker:
   - image: 'aeternity/infrastructure:<<parameters.tag>>'
+working_directory: /src
 parameters:
   tag:
     default: v2.12.4

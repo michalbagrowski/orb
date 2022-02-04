@@ -40,4 +40,3 @@ steps:
       root: << parameters.plans_workspace >>
       paths:
         - "*.*"
-
