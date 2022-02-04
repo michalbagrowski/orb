@@ -4,7 +4,10 @@ parameters:
     default: /tmp/plans
   path:
     type: string
-    default: "/tmp/plans/plan.out"
+    default: "."
+  in:
+    type: string
+    default: /tmp/plans/plan.out
   auto_approve:
     type: boolean
     default: false
@@ -24,8 +27,8 @@ steps:
         if [ "<< parameters.auto_approve >>" = "true" ]; then
             TF_ARGS="$TF_ARGS -auto-approve"
         fi
-        envdir /secrets terraform apply \
+        envdir /secrets terraform -chdir=<< parameters.path >> apply \
           -lock-timeout=<< parameters.lock_timeout >> \
           -parallelism=<< parameters.parallelism >> \
           $TF_ARGS \
-          << parameters.path >>
+          << parameters.in >>
