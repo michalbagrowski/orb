@@ -1,0 +1,6 @@
+executor: infrastructure_container
+steps:
+  - checkout
+  - setup_secrets
+  - terraform_init
+  - terraform_apply
